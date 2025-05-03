@@ -11,6 +11,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/entries', entryRoutes);
+const requirementRoutes = require('./routes/requirementRoutes');
+
+app.use('/api/requirements', requirementRoutes);
+
+
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
